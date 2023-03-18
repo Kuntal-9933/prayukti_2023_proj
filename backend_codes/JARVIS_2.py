@@ -138,7 +138,9 @@ if __name__=='__main__':
                 speak("sir , system may need cahrging in a few minutes")
             elif percentage <30:
                 speak("sir, system needs immediate charging ")
-
+        elif ("sleep" and "go" and "to") in command:
+            speak("Going to sleep sir")
+            a = invoke()
         elif "the time" in command:
             time_Now=datetime.datetime.now().strftime('%H hour:%M minute:%S second')
             speak(f"Sir ,  the time is {time_Now}")
