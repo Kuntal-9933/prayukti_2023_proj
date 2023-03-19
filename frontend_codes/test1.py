@@ -149,7 +149,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
 
         # set qmovie as label
-        self.movie = QMovie("E:\jarvis\ExtraGui\Earth.gif")
+        self.movie = QMovie("F:\\jarvis_code_files\\prayukti_2023_proj\\frontend_codes\\ExtraGui\\Earth.gif")
         self.label.setMovie(self.movie)
         self.movie.start()
 
