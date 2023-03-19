@@ -53,11 +53,10 @@ def invoke():
         try:
             command=r.recognize_google(audio,language='en-in')
             print(f"{command}")
+            if "jarvis" in command.lower():
+                return True
         except Exception as e:
             invoke()
-
-        if "jarvis" in command.lower():
-            return True
     
 
 def tak_commands():
