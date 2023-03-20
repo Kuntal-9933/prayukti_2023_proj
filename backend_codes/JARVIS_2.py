@@ -29,7 +29,7 @@ engine=pyttsx3.init('sapi5')
 voices=engine.getProperty('voices')
 engine.setProperty('voice',voices[0].id)
 
-
+r=sr.Recognizer() 
 def speak(audio):
     engine.say(audio)
     engine.runAndWait()
@@ -44,23 +44,26 @@ def wish():
         speak(f"Good Evening Sir")
 
 def invoke():
-    r=sr.Recognizer()
+    global r
+    print("Start")
     command = ""
     while "jarvis" not in command:
         with sr.Microphone() as Source:
-            r.pause_threshold=1
+            print("Listening...")
             audio=r.listen(Source)
         try:
+            print("Recognizing...")
             command=r.recognize_google(audio,language='en-in')
             print(f"{command}")
             if "jarvis" in command.lower():
                 return True
         except Exception as e:
+            print("Face exception ")
             invoke()
     
 
 def tak_commands():
-    r=sr.Recognizer()
+    global r
     with sr.Microphone() as Source:
         speak("please tell your query sir?")
         print("Listening...")
@@ -138,7 +141,7 @@ if __name__=='__main__':
             elif percentage <30:
                 speak("sir, system needs immediate charging ")
         elif "sleep" in command:
-            speak("Going to sleep     sir ....")
+            speak("Going to sleep sir")
             a = invoke()
         elif "the time" in command:
             time_Now=datetime.datetime.now().strftime('%H hour:%M minute:%S second')
