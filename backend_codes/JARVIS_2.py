@@ -111,8 +111,8 @@ def send_email(to,content):
 
 if __name__=='__main__':
     wish()
-    a = invoke()
-    while True and a:
+    a = True
+    while a:
         command=tak_commands().lower()
 
         if "introduce"in command:
