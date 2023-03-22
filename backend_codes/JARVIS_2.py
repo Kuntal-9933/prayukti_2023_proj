@@ -14,15 +14,15 @@ from PIL import Image
 import psutil
 import pyautogui
 from wikipedia.wikipedia import page
-from PyQt5 import QtWidgets,QtCore,QtGui
-from PyQt5.QtCore import QTimer,QTime,QDate,Qt
-from PyQt5.QtGui import QMovie
-from PyQt5.QtCore import *
-from PyQt5.QtWidgets import *
-from PyQt5.QtGui import *
-from PyQt5.uic  import loadUiType
+#from PyQt5 import QtWidgets,QtCore,QtGui
+#from PyQt5.QtCore import QTimer,QTime,QDate,Qt
+#from PyQt5.QtGui import QMovie
+#from PyQt5.QtCore import *
+#from PyQt5.QtWidgets import *
+#from PyQt5.QtGui import *
+#from PyQt5.uic  import loadUiType
 # from jarvisgui import Ui_Dialog
-import PyPDF2
+#import PyPDF2
 
 
 engine=pyttsx3.init('sapi5')
@@ -85,9 +85,9 @@ def tak_commands():
     
 def read_pdf():
     # import pyPDF2
-    book=open("E:\electronics notes\Mesh analysis .pdf",'rb')
+    '''book=open("E:\electronics notes\Mesh analysis .pdf",'rb')
     # pdfReader=pyPDF2.pdffileReader(book)
-    pdfReader=PyPDF2.PdfFileReader(book)
+    #pdfReader=PyPDF2.PdfFileReader(book)
     pages=pdfReader.numPages
     speak(f"total number of pages in the pdf is {pages}")
     speak("please the enter the number,  of page you want to read")
@@ -95,7 +95,8 @@ def read_pdf():
     page=pdfReader.getPage(no)
     text=page.extractText()
     speak(text)
-    print(text)
+    print(text)'''
+    pass
 
 
 def send_email(to,content):
