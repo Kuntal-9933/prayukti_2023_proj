@@ -50,7 +50,7 @@ def invoke():
     while "jarvis" not in command:
         with sr.Microphone() as Source:
             print("Listening...")
-            audio=r.listen(Source)
+            audio=r.listen(source = Source, timeout= None, phrase_time_limit= 5)
         try:
             print("Recognizing...")
             command=r.recognize_google(audio,language='en-in')
@@ -59,7 +59,8 @@ def invoke():
                 return True
         except Exception as e:
             print("Face exception ")
-            invoke()
+            command = invoke()
+            return command
     
 
 def tak_commands():
@@ -68,7 +69,7 @@ def tak_commands():
         speak("please tell your query sir?")
         print("Listening...")
         r.pause_threshold=1
-        audio=r.listen(Source)
+        audio=r.listen(source = Source, timeout= None, phrase_time_limit= 5)
     try:
         speak("Recognising...")
         print("Recognising...")
@@ -76,10 +77,11 @@ def tak_commands():
         # speak(f"Kuntal, asked for {command}\n")
         speak("  sure sir")
         print(f"user asked for  {command}")
+        return command
     except Exception as e:
         speak("Say That Again Please..")
-        return "none"
-    return command
+        command = tak_commands()
+        return command
     
 def read_pdf():
     # import pyPDF2
@@ -143,7 +145,7 @@ if __name__=='__main__':
         elif "sleep" in command:
             speak("Going to sleep sir")
             a = invoke()
-        elif "the time" in command:
+        elif "time" in command:
             time_Now=datetime.datetime.now().strftime('%H hour:%M minute:%S second')
             speak(f"Sir ,  the time is {time_Now}")
                 
