@@ -187,7 +187,6 @@ if __name__=='__main__':
             break
         #elif "read pdf" in command:
             read_pdf()
-            break
         elif "open youtube" in command:
             speak("opening youtube")
             webbrowser.open('youtube.com')
