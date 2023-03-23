@@ -29,7 +29,12 @@ engine=pyttsx3.init('sapi5')
 voices=engine.getProperty('voices')
 engine.setProperty('voice',voices[0].id)
 
-r=sr.Recognizer() 
+r=sr.Recognizer()
+
+chrome_path = "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe"
+webbrowser.register("chrome", None, webbrowser.BackgroundBrowser(chrome_path))
+
+
 def speak(audio):
     engine.say(audio)
     engine.runAndWait()
@@ -117,8 +122,7 @@ def tak_commands():
 if __name__=='__main__':
     wish()
     a = True
-    chrome_path = "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe"
-    webbrowser.register("chrome", None, webbrowser.BackgroundBrowser(chrome_path))
+    
     while a:
         command=tak_commands().lower()
 
@@ -195,13 +199,13 @@ if __name__=='__main__':
             webbrowser.get('chrome').open('youtube.com')
         elif "open google" in command:
             speak("opening google for you sir , in a minute")
-            webbrowser.open('google.com')
+            webbrowser.get('chrome').open('google.com')
         elif "open facebook" in command:
             speak("opening facebook")
-            webbrowser.open('facebook.com')
+            webbrowser.get('chrome').open('facebook.com')
         elif "open hackerrank" in command:
             speak("opening hackerrank")
-            webbrowser.open('hackerrank.com')
+            webbrowser.get('chrome').open('hackerrank.com')
         elif 'quit jarvis' in command:
             speak("Good Bye Sir, hope we will meet again soon!")
             print("program terminates")
