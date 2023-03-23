@@ -68,7 +68,6 @@ def tak_commands():
     with sr.Microphone() as Source:
         speak("please tell your query sir?")
         print("Listening...")
-        r.pause_threshold=1
         audio=r.listen(source = Source, timeout= None, phrase_time_limit= 5)
     try:
         speak("Recognising...")
