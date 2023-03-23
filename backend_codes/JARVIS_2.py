@@ -184,10 +184,8 @@ if __name__=='__main__':
             code_way="C:\\Users\\KUNTAL MUKHERJEE\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe"
             speak("opening visual studio code")
             os.startfile(code_way)
-            break
         elif "read pdf" in command:
             read_pdf()
-            break
         elif "open youtube" in command:
             speak("opening youtube")
             webbrowser.open('youtube.com')
