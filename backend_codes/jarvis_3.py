@@ -16,7 +16,7 @@ from langdetect import detect
 
 
 
-openai.api_key='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'
+openai.api_key='api-key'
 
 engine=pyttsx3.init('sapi5')
 voices=engine.getProperty('voices')

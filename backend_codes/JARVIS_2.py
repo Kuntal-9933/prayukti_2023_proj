@@ -32,8 +32,8 @@ engine.setProperty('voice',voices[0].id)
 
 r=sr.Recognizer()
 
-chrome_path = "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe"
-webbrowser.register("chrome", None, webbrowser.BackgroundBrowser(chrome_path))
+browser_path = "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe"
+webbrowser.register("edge", None, webbrowser.BackgroundBrowser(browser_path))
 
 
 def speak(audio):
@@ -195,7 +195,7 @@ if __name__=='__main__':
         #elif "read pdf" in command:
             read_pdf()
         elif "play song" in command:
-            path="F:\\VS_code\\jarvis\\prayukti_2023_proj\\backend_codes\\songs\\"
+            path="F:\\jarvis_code_files\\prayukti_2023_proj\\backend_codes\\songs\\"
             files=os.listdir(path)
             d=random.choice(files)
             speak("Please enjoy the song")
@@ -203,16 +203,16 @@ if __name__=='__main__':
             a = invoke()
         elif "open youtube" in command:
             speak("opening youtube")
-            webbrowser.get('chrome').open('youtube.com')
+            webbrowser.get('edge').open('youtube.com')
         elif "open google" in command:
             speak("opening google for you sir , in a minute")
-            webbrowser.get('chrome').open('google.com')
+            webbrowser.get('edge').open('google.com')
         elif "open facebook" in command:
             speak("opening facebook")
-            webbrowser.get('chrome').open('facebook.com')
+            webbrowser.get('edge').open('facebook.com')
         elif "open hackerrank" in command:
             speak("opening hackerrank")
-            webbrowser.get('chrome').open('hackerrank.com')
+            webbrowser.get('edge').open('hackerrank.com')
         elif 'quit jarvis' in command:
             speak("Good Bye Sir, hope we will meet again soon!")
             print("program terminates")
