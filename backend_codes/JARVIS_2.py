@@ -82,7 +82,7 @@ def tak_commands():
         command = tak_commands()
         return command
     
-def read_pdf():
+"""def read_pdf():
     # import pyPDF2
     '''book=open("E:\electronics notes\Mesh analysis .pdf",'rb')
     # pdfReader=pyPDF2.pdffileReader(book)
@@ -95,16 +95,16 @@ def read_pdf():
     text=page.extractText()
     speak(text)
     print(text)'''
-    pass
+    pass"""
 
 
-def send_email(to,content):
+"""def send_email(to,content):
     server=smtplib.SMTP('smtp.gmail.com',587)
     server.ehlo
     server.starttls
     server.login('''kuntalmukherjee702@gmail.com','password''')
     server.sendmail('kuntalmukherjee702@gmail.com',to,content)
-    server.close()
+    server.close()"""
 
 # class MainThread(QThread):
 #     def __init__(self):
@@ -158,15 +158,15 @@ if __name__=='__main__':
             print(f'current {search} is {temp}')
             speak(f'current {search} is {temp}')
 
-        elif 'send email' in command:
-            try:
+        #elif 'send email' in command:
+            """try:
                 speak("what I will tell?")
                 content=tak_commands()
                 to="kuntalmukherjee834@gmail.com"
                 send_email(to,content)
                 speak("Email has been sent")
             except Exception as e:
-                speak("sorry , email has not been sent")
+                speak("sorry , email has not been sent")"""
         elif 'wikipedia' in command:
             speak("searching Wikipedia, wait for a while sir")
             command=command.replace('wikipedia','')
@@ -185,7 +185,7 @@ if __name__=='__main__':
             speak("opening visual studio code")
             os.startfile(code_way)
             break
-        elif "read pdf" in command:
+        #elif "read pdf" in command:
             read_pdf()
             break
         elif "open youtube" in command:
