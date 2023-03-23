@@ -14,6 +14,7 @@ from PIL import Image
 import psutil
 import pyautogui
 from wikipedia.wikipedia import page
+import random
 #from PyQt5 import QtWidgets,QtCore,QtGui
 #from PyQt5.QtCore import QTimer,QTime,QDate,Qt
 #from PyQt5.QtGui import QMovie
@@ -193,7 +194,11 @@ if __name__=='__main__':
             break
         #elif "read pdf" in command:
             read_pdf()
-        
+        elif "play song" in command:
+            path="F:\\VS_code\\jarvis\\prayukti_2023_proj\\backend_codes\\songs\\"
+            files=os.listdir(path)
+            d=random.choice(files)
+            os.startfile(path + d)
         elif "open youtube" in command:
             speak("opening youtube")
             webbrowser.get('chrome').open('youtube.com')
