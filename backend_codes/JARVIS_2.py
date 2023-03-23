@@ -198,7 +198,9 @@ if __name__=='__main__':
             path="F:\\VS_code\\jarvis\\prayukti_2023_proj\\backend_codes\\songs\\"
             files=os.listdir(path)
             d=random.choice(files)
+            speak("Please enjoy the song")
             os.startfile(path + d)
+            a = invoke()
         elif "open youtube" in command:
             speak("opening youtube")
             webbrowser.get('chrome').open('youtube.com')
