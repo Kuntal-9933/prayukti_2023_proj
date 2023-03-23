@@ -117,6 +117,8 @@ def tak_commands():
 if __name__=='__main__':
     wish()
     a = True
+    chrome_path = "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe"
+    webbrowser.register("chrome", None, webbrowser.BackgroundBrowser(chrome_path))
     while a:
         command=tak_commands().lower()
 
@@ -187,9 +189,10 @@ if __name__=='__main__':
             break
         #elif "read pdf" in command:
             read_pdf()
+        
         elif "open youtube" in command:
             speak("opening youtube")
-            webbrowser.open('youtube.com')
+            webbrowser.get('chrome').open('youtube.com')
         elif "open google" in command:
             speak("opening google for you sir , in a minute")
             webbrowser.open('google.com')
