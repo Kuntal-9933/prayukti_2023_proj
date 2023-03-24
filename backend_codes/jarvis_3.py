@@ -73,8 +73,8 @@ def chatgpt_service(message):
     speak(f"{text}")
 
 def filter_command(command):
-    if "jarvis" in command:
-        command=command.replace("jarvis","")
+    if "Jarvis" in command:
+        command=command.replace("Jarvis","")
         return command
     else:
         return command
